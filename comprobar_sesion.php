@@ -5,7 +5,7 @@
 
 	$usuario=$_SESSION['usuario'];
 
-	 	//HOLA
+	 	
 
 	echo  "Hola ". $usuario . ", has iniciado sesión.<br />";
 

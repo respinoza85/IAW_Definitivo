@@ -36,7 +36,6 @@ form input[type="day"],
 
 /*Estado focus (cuando está seleccionado) */
 form input[type="text"]:focus{
-	color:#ffff;
 	font-family:"Roboto", Arial, sans-serif, helvetica;
 	display: block;
 }

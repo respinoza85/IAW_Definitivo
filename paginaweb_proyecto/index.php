@@ -9,7 +9,7 @@
 <div class="group">
   <form action="registro_conexion.php" method="POST">
   <h2><em>Formulario de Registro</em></h2>  
-     
+    
       <label for="nombre">Nombre <span><em>(requerido)</em></span></label>
       <input type="text" name="Nombre" class="form-input" required/>   
       
@@ -17,12 +17,12 @@
       <input type="text" name="Apellido" class="form-input" required/>  
       
       <label for="contraseña">Contraseña <span><em>(requerido)</em></span></label>
-      <input type="text" name="Contraseña" class="form-input" required/> 
+      <input type="password" name="Contraseña" class="form-input" required/> 
       
       <label for="email">Email <span><em>(requerido)</em></span></label>
       <input type="email" name="Email" class="form-input" />
-     <center> <input class="form-btn" name="submit" type="submit" value="Suscribirse" /></center>
-     <input type="button" onclick="window.location='login.php'" class="Redirect" value="Ingresar"/>
+     <center> <input class="form-btn" name="submit" type="submit" value="Suscribirse" /></center><br>
+     <center><input class="form-btn" onclick="window.location='login.php'" class="Redirect" value="¿Tienes cuenta? Inicia Sesion."/></center>
     </p>
   </form>
 </div>

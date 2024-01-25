@@ -39,14 +39,15 @@ if (isset($_POST['login_button'])) {
 <html>
 <head>
   <title>Inicio de sesión</title>
+  <link href="estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div class="container">
+<div class="group">
     <div class="d-flex min-vh-100">
       <div class="row d-flex flex-grow-1 justify-content-center align-items-center">
         <div class="col-md-4 form login-form">
           <form action="login.php" method="POST" autocomplete="off">
-            <h2 class="text-center">Inicio de sesión</h2>
+            <h2><em>Inicio de Sesión</em></h2>
               
               <?php
               if (count($errors) > 0) {
@@ -59,13 +60,18 @@ if (isset($_POST['login_button'])) {
               ?>
               
               <div class="form-group mb-3">
-                  <input type="text" name="email" class="form-control" placeholder="Correo electrónico" required>
+                  <label for="email">Correo Electronico <span><em>(requerido)</em></span></label>
+                  <input type="text" name="email" class="form-input" required>
               </div>
               <div class="form-group mb-3">
-                  <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                  <label for="email">Contraseña <span><em>(requerido)</em></span></label>
+                  <input type="password" name="password" class="form-input" required>
+              </div><br>
+              <div class="form-group mb-3">
+              <center> <input class="form-btn" name="login_button" type="submit" value="acceder" /></center><br>
               </div>
               <div class="form-group mb-3">
-                  <input type="submit" name="login_button" class="form-control btn btn-primary" value="Acceder">
+              <center><input class="form-btn" onclick="window.location='index.php'" class="Redirect" value="Suscribirse"/></center>
               </div>
           </form>
         </div>

@@ -8,32 +8,35 @@ $db = mysqli_connect('localhost', 'root', '', 'saturno');
 $errors = [];
 
 // Si se ha enviado el formulario
-if (isset($_POST['login_button'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
  
-  // Comprobar si el email es válido
-  $query = "SELECT * FROM usuario WHERE Email='$email'";
-  $results = mysqli_query($db, $query);
+    // Comprobar si el email es válido
+    $query = "SELECT * FROM usuario WHERE Email='$email'";
+    $results = mysqli_query($db, $query);
  
-  if (mysqli_num_rows($results) == 1) {
-    // Email válido, verificar contraseña
-    $row = mysqli_fetch_assoc($results);
-    if (password_verify($password, $row['Contraseña'])) {
-      // Inicio de sesión válido
-      $_SESSION['usuario_id'] = $row['id'];
-      //aqui entra a la pagina una vez halla iniciado session
-      header('location: Udemy.html');
+    if (mysqli_num_rows($results) == 1) {
+        // Email válido, verificar contraseña
+        $row = mysqli_fetch_assoc($results);
+        if (password_verify($password, $row['Contraseña'])) {
+            // Inicio de sesión válido
+            $_SESSION['usuario_id'] = $row['id'];
+            // Redirigir a la página después del inicio de sesión
+            header('Location: Udemy.html');
+            exit();
+        } else {
+            // Contraseña inválida
+            $errors[] = "Email/contraseña inválidos";
+        }
     } else {
-      // Contraseña inválida
-      $errors[] = "Email/contraseña inválidos";
+        // Email inválido
+        $errors[] = "Email/contraseña inválidos";
     }
-  } else {
-    // Email inválido
-    $errors[] = "Email/contraseña inválidos";
-  }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html>

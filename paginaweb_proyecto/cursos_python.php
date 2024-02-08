@@ -21,13 +21,16 @@ if ($conn->connect_error) {
 }
 
 // Obtener el ID del cliente de la sesión
-$id_cliente = $_SESSION['usuario_id'];
+//$id_cliente = $_SESSION['usuario_id'];
 
-// Verificar el ID del cliente
-echo "ID del cliente: " . $id_cliente . "<br>";
+// Verificar el ID del cliente echo "ID del cliente: " . $id_cliente . "<br>";
 
 // Consulta para obtener los cursos del cliente
 $sql = "select * from cursos where Tipo_de_curso = 'Python'";
+
+// Mostrar mensaje de bienvenida
+echo "<h1><marquee>¡Bienvenido! Aquí están los cursos que tienes:</marquee></h1><br><br>";
+
 //$sql = "SELECT c.Id, c.Nombre, c.Tipo_de_curso, c.Precio
   //      FROM cursos c
     //    INNER JOIN usuario u ON c.Id = u.Id
@@ -57,3 +60,8 @@ if ($result->num_rows > 0) {
 $result->close();
 $conn->close();
 ?>
+<html>
+
+<input type="button" onclick="window.location='Udemy.html'" class="Redirect" value="Volver atras"/>
+  
+</html>

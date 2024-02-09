@@ -41,7 +41,7 @@ button:hover{
 .color-acento{ color:rgb(89, 76, 234); }
 
 header{
-    background-color: rgb(245,245,245);
+    background-color: rgb(245, 245, 245);
     
 }
 
@@ -96,7 +96,7 @@ header a:hover{
 }
 
 #hero h1{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 #hero button{
@@ -181,7 +181,7 @@ header a:hover{
     align-items: center;
     text-align: center;
     background-color: rgb(30,30,30);
-    color: white;
+    color: rgb(255, 255, 255);
     height: 80vh;
 }
 
@@ -194,7 +194,7 @@ header a:hover{
 }
 
 footer{
-    background-color: rgb(230,230,230);
+    background-color: rgb(230, 230, 230);
 }
 
 footer p{

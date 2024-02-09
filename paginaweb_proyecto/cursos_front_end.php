@@ -48,18 +48,24 @@ $result = $conn->query($sql);
 if ($result === false) {
     die("Error en la consulta: " . $conn->error);
 }
+?>
 
-if ($result->num_rows > 0) {
-    // Mostrar los cursos del cliente
-    while($row = $result->fetch_assoc()) {
-        echo "Nombre del curso: " . $row["Nombre"]. "<br>";
-        echo "Tipo de curso: " . $row["Tipo_de_curso"]. "<br>";
-        echo "Precio: " . $row["Precio"]. "<br><br>";
+<div style="font-size: 18px; font-family: Arial;">
+<?php
+    if ($result->num_rows > 0) {
+        // Mostrar los cursos del cliente
+        while($row = $result->fetch_assoc()) {
+            echo "<strong>Nombre del curso:</strong> " . $row["Nombre"]. "<br>";
+            echo "<strong>Tipo de curso:</strong> " . $row["Tipo_de_curso"]. "<br>";
+            echo "<strong>Precio:</strong> " . $row["Precio"]. "<br><br>";
+        }
+    } else {
+        echo "El cliente no tiene cursos.";
     }
-} else {
-    echo "El cliente no tiene cursos.";
-}
+?>
+</div>
 
+<?php
 // Cerrar el resultado y la conexión
 $result->close();
 $conn->close();
